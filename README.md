@@ -11,19 +11,21 @@ Company Competitor Analysis is a web application designed to help users analyze 
 
 2. **Navigate to the Project Directory**
 
-3. **Install Dependencies:**
+3. **Create an empty folder 'static' in the Directory**
+
+4. **Install Dependencies:**
    Make sure you have Python and pip installed on your system. Then, install the required dependencies using pip:
    ```
    pip install -r requirements.txt
    ```
 
-4. **Set Up PostgreSQL Database:**
+5. **Set Up PostgreSQL Database:**
    Install PostgreSQL if you haven't already. Create a new database and note down the connection details (database name, username, password) and fill them out in database.yaml file.
    
-5. **Set Up Gemini:**
+6. **Set Up Gemini:**
    Enter your Google Generative AI API key in the .env file.
 
-6. **Run FastAPI Server:**
+7. **Run FastAPI Server:**
    Start the FastAPI server using uvicorn:
    ```
    uvicorn main:app --reload
