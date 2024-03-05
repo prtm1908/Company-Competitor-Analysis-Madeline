@@ -24,8 +24,8 @@ def load_models():
 
     model = genai.GenerativeModel('gemini-pro')
 
-    tokenizer = AutoTokenizer.from_pretrained("dslim/bert-base-NER")
-    model2 = AutoModelForTokenClassification.from_pretrained("dslim/bert-base-NER")
+    tokenizer = AutoTokenizer.from_pretrained("dslim/bert-large-NER")
+    model2 = AutoModelForTokenClassification.from_pretrained("dslim/bert-large-NER")
     nlp = pipeline("ner", model=model2, tokenizer=tokenizer,grouped_entities=True)
 
     return model, nlp
@@ -40,18 +40,16 @@ def enter_company(model, nlp,company_name):
 
     for i in nlp(response.text):
         competitors.append(i["word"])
-    for i in competitors:
+    for idx, i in enumerate(competitors):
         if(i[0]=='#'):
             i = re.sub('^#+', '', i)
-            temp=competitors[-1]
-            del competitors[-1]
+            temp=competitors[idx-1]
+            del competitors[idx-1]
+            del competitors[idx]
             temp+=i
             if temp not in competitors:
                 competitors.append(temp)
-            continue
             
-        if i not in competitors:
-            competitors.append(i)
 
     print(competitors)
 
