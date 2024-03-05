@@ -9,7 +9,7 @@ Company Competitor Analysis is a web application designed to help users analyze 
    git clone https://github.com/prtm1908/Company-Competitor-Analysis-Madeline.git
    ```
 
-2. **Navigate to the Project Directory:**
+2. **Navigate to the Project Directory**
 
 3. **Install Dependencies:**
    Make sure you have Python and pip installed on your system. Then, install the required dependencies using pip:
