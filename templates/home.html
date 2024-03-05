@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Comparison</title>
+</head>
+<body>
+    <h1>Welcome to Company Comparison</h1>
+    <form action="/" method="post">
+        <label for="company_name">Enter Company Name:</label>
+        <input type="text" id="company_name" name="company_name">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if company_name %}
+        <h2>Competitors for {{ company_name }}:</h2>
+        <form action="/compare/" method="post">
+            {% for competitor in competitors %}
+                <input type="radio" id="competitor{{ loop.index }}" name="competitor" value="{{ competitor }}">
+                <label for="competitor{{ loop.index }}">{{ competitor }}</label><br>
+            {% endfor %}
+            <input type="hidden" name="company_name" value="{{ company_name }}">
+            <button type="submit">Compare</button>
+        </form>
+    {% endif %}
+    {% if result %}
+        <h3>Comparison Result:</h3>
+        {{ result | safe}}
+    {% endif %}
+</body>
+</html>
