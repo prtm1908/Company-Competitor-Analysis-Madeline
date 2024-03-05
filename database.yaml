@@ -1,6 +1,6 @@
 database:
   user: "postgres"
-  password: "batra123"
+  password: ""
   host: "localhost"
   port: "5432"
   name: "madeline"
