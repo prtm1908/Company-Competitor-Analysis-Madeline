@@ -22,7 +22,6 @@ Company Competitor Analysis is a web application designed to help users analyze 
    
 5. **Set Up Gemini:**
    Enter your Google Generative AI API key in the .env file.
-   ```
 
 6. **Run FastAPI Server:**
    Start the FastAPI server using uvicorn:
