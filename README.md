@@ -28,5 +28,5 @@ Company Competitor Analysis is a web application designed to help users analyze 
 7. **Run FastAPI Server:**
    Start the FastAPI server using uvicorn:
    ```
-   uvicorn main:app --reload
+   uvicorn app:app --reload
    ```
