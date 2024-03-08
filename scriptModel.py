@@ -43,12 +43,8 @@ def enter_company(model, nlp,company_name):
     for idx, i in enumerate(competitors):
         if(i[0]=='#'):
             i = re.sub('^#+', '', i)
-            temp=competitors[idx-1]
-            del competitors[idx-1]
+            competitors[idx-1]=competitors[idx-1]+i
             del competitors[idx]
-            temp+=i
-            if temp not in competitors:
-                competitors.append(temp)
             
 
     print(competitors)
